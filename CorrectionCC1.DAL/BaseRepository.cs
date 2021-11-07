@@ -10,7 +10,7 @@ namespace CorrectionCC1.DAL
 {
     public class BaseRepository<T>
     {
-        private readonly string Path= $"Data/{typeof(T).Name}.json";
+        protected readonly string Path= $"MyData/{typeof(T).Name}.json";
         protected List<T> datas;
         private Serialiser<List<T>> serialiser;
         public BaseRepository()
@@ -23,6 +23,7 @@ namespace CorrectionCC1.DAL
 
             Restore();
         }
+        //permet de recuperer un index ou un indice sur un certain element 
         public int Check(T obj)
         {
             var index = -1;
@@ -37,7 +38,7 @@ namespace CorrectionCC1.DAL
         public void Add(T obj)
         {
             int index = Check(obj);
-            if (index != 1)
+            if (index !=-1)
                 throw new DuplicateWaitObjectException($"{typeof(T).Name} already exists !");
             datas.Add(obj);
             Save();
@@ -52,12 +53,13 @@ namespace CorrectionCC1.DAL
             if (newIndex >= 0 && newIndex != oldIndex)
                 throw new KeyNotFoundException($"{typeof(T).Name} already exist !");
             datas[oldIndex] = newObj;
+            Save();
         }
 
         // Supprimer  un user
         public void Delete(T obj)
         {
-            var index = Check(obj);
+            var index = Check(obj); 
             if(index==0)
             {
                 datas.RemoveAt(index);

@@ -12,7 +12,7 @@ namespace CorrectionCC.BO
         public string Email { get; set; }
         public string Fullname { get; set; }
         public string Password { get; set; }
-        public List<Product> products;
+        public List<Product> products { get; set; }
        
         public User()
         {
@@ -22,7 +22,7 @@ namespace CorrectionCC.BO
         {
             this.Email = Email;
             this.Fullname = Fullname;
-            this.Password = Password;            
+            this.Password = Password;          
 
         }
         public User(User user):this(user?.Email,user?.Fullname, user?.Password)
@@ -37,6 +37,14 @@ namespace CorrectionCC.BO
         {
             products.Remove(product);
         }
+        public List<Product> GetProducts()
+        {
+            var list = new List<Product>();
+            foreach (var p in products)
+                list.Add(new Product(p));
+            return list;
+        }
+       
 
         public override bool Equals(object obj)
         {

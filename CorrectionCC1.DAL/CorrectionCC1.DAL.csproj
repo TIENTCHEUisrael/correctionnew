@@ -31,6 +31,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Library.Serialisation, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Library.Serialisation\bin\Debug\Library.Serialisation.dll</HintPath>
+    </Reference>
+    <Reference Include="Mylibrary.serialisation">
+      <HintPath>..\..\..\Essai perso\TIENTCHEUISRAEL_PAM2\Perso\Mylibrary\Mylibrary.serialisation\bin\Debug\Mylibrary.serialisation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -50,10 +57,6 @@
     <ProjectReference Include="..\CorrectionCC.BO\CorrectionCC.BO.csproj">
       <Project>{28b4d252-27bd-4515-a1fd-262cb01249f8}</Project>
       <Name>CorrectionCC.BO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Library.Serialisation\Library.Serialisation.csproj">
-      <Project>{7a6c3e01-b545-4d50-9278-6d70d471717c}</Project>
-      <Name>Library.Serialisation</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

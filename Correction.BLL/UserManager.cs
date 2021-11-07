@@ -29,7 +29,7 @@ namespace Correction.BLL
         {
             userRepository.Delete(user);
         }
-        public User Login(string email, string password)
+        public User Authenticate(string email, string password)
         {
             var users= userRepository.FindByEmail(email);
             foreach (var u in users)
@@ -45,19 +45,21 @@ namespace Correction.BLL
         {
             return productrepository.GetAll();
         }
+
         public void AddUserProduct(User user,Product product)
         {
-            if (userRepository.Check(user) > 0)
+            if (userRepository.Check(user) < 0)
                 throw new KeyNotFoundException($"{nameof(User)} not found");
             user.AddProduct(product);
             userRepository.Set(user, user);
         }
         public void RemoveUserProduct(User user, Product product)
         {
-            if (userRepository.Check(user) > 0)
+            if (userRepository.Check(user) < 0)
                 throw new KeyNotFoundException($"{nameof(User)} not found");
             user.DeleteProduct(product);
             userRepository.Set(user, user);
         }
+
     }
 }

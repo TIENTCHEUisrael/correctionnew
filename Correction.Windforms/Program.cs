@@ -1,4 +1,6 @@
-﻿using System;
+﻿
+using CorrectionCC.BO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,6 +10,7 @@ namespace Correction.Windforms
 {
     static class Program
     {
+        public static User currentuser { get; set; }
         /// <summary>
         /// Point d'entrée principal de l'application.
         /// </summary>
@@ -16,7 +19,9 @@ namespace Correction.Windforms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            new Authentification().Show();
+            Application.Run();
+                                   
         }
     }
 }

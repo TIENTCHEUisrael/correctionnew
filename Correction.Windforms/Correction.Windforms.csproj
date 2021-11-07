@@ -46,14 +46,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormAdProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormAdProduct.Designer.cs">
+      <DependentUpon>FormAdProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Authentification.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Authentification.Designer.cs">
+      <DependentUpon>Authentification.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPassword.Designer.cs">
+      <DependentUpon>EditPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormParent.Designer.cs">
+      <DependentUpon>FormParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUSer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUSer.Designer.cs">
+      <DependentUpon>FormUSer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAdProduct.resx">
+      <DependentUpon>FormAdProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Authentification.resx">
+      <DependentUpon>Authentification.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPassword.resx">
+      <DependentUpon>EditPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormParent.resx">
+      <DependentUpon>FormParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUSer.resx">
+      <DependentUpon>FormUSer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +114,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Correction.BLL\Correction.BLL.csproj">
+      <Project>{04582070-f30b-4cfc-a2ef-eb29a3b98238}</Project>
+      <Name>Correction.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CorrectionCC.BO\CorrectionCC.BO.csproj">
+      <Project>{28b4d252-27bd-4515-a1fd-262cb01249f8}</Project>
+      <Name>CorrectionCC.BO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
